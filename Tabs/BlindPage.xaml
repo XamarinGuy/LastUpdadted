@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:Lottie.Forms;assembly=Lottie.Forms"
+             x:Class="Tabs.BlindPage">
+
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+
+            <Style x:Key ="infostyle" TargetType="Button">
+                <Setter Property="WidthRequest" Value="60" />
+                <Setter Property="HeightRequest" Value="60"/>
+                <Setter Property="BorderRadius" Value="30"/>
+                <Setter Property="TextColor" Value="White"/>
+                <Setter Property="FontSize" Value="36"/>
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+
+            <Image x:Name="MyImage" Grid.Row="0" Margin="24"/>
+           
+            <ActivityIndicator x:Name="MyActivityIndicator" Grid.Row="1"/>
+            <ScrollView Grid.Row="2">
+                <Label x:Name="MyLabel"/>
+            </ScrollView>
+            <Button x:Name="MyButton" Grid.Row="4" Text="See4Me" Clicked="Handle_Click"  Style="{StaticResource infostyle}"/>
+            <forms:AnimationView 
+    x:Name="AnimationView"
+    Animation="eye01.json"
+                Grid.Row="3"
+    Loop="True"
+    AutoPlay="True"
+    VerticalOptions="FillAndExpand"
+    HorizontalOptions="FillAndExpand"
+    Scale="0.2"/>
+        </Grid>
+    </ContentPage.Content>
+
+</ContentPage>
